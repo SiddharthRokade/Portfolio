@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth Rokade - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Siddharth Rokade</a>
+            <button class="navbar-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm Siddharth. I'm a Software Developer passionate about creating amazing web experiences.</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </section>
+
+        <section id="about">
+            <div class="about-content">
+                <img src="Siddharth.jpg" alt="Siddharth Rokade" class="profile-photo">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <div class="calligraphic-name">Siddharth Rokade</div><br>
+                   <b><p>Skills-list</p></b> 
+                    <ul class="skills-list">
+                        <li>HTML </li>
+                        <li>JavaScript</li>
+                        <li>CSS</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2>My Work</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="myntra.jpg" alt="Project 1">
+                    <h3>Myntra Clone</h3>
+                    <p> This is a clone of Myntra website using HTML and CSS</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="cricket.jpeg" alt="Project 2">
+                    <h3>BBS Game</h3>
+                    <p>This is basic cricket game made using HTMl , CSS , JavaScript</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+               
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="https://formspree.io/f/xyyqnqjk" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Siddharth Rokade. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

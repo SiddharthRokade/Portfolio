@@ -1,0 +1,699 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+:root {
+  --primary-color: #3498db;  /* Bright blue */
+  --secondary-color: #2c3e50;  /* Dark blue-gray */
+  --accent-color: #e74c3c;  /* Coral red */
+  --text-color: #ecf0f1;  /* Light gray */
+  --background-color: #ffffff;  /* White */
+  --hover-color: #2980b9;  /* Darker blue for hover effects */
+  --error-color: #FF6B6B;  
+  --success-color: #4ECDC4;  
+  --portfolio-bg: #f0f4f8;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --title-color: #2c3e50;
+  --text-color: #34495e;
+  --button-bg: #3498db;
+  --button-text: #ffffff;
+  --button-hover: #2980b9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+  background-color: var(--secondary-color);
+}
+
+.logo {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2rem;
+  color: var(--text-color);
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
+}
+
+/* Hero section */
+.hero {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  text-align: center;
+  padding: 8rem 2rem 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  animation: fadeInUp 1s ease;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease 0.4s both;
+}
+
+.cta-button:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* About section */
+#about {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8f0fe 100%);
+  color: #2c3e50;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.profile-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #3498db;
+  box-shadow: 0 8px 16px rgba(52, 152, 219, 0.2);
+}
+
+.about-text h2 {
+  color: #2980b9;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  color: #34495e;
+  margin-bottom: 1.5rem;
+}
+
+.about-text ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.about-text li {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.about-text li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.about-text li img {
+  width: 24px;
+  height: 24px;
+}
+
+.about-text li span {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+/* Skill colors */
+.about-text li:nth-child(1) { background-color: #61dafb; } /* React */
+.about-text li:nth-child(2) { background-color: #f0db4f; } /* JavaScript */
+.about-text li:nth-child(3) { background-color: #3178c6; } /* TypeScript */
+.about-text li:nth-child(4) { background-color: #41b883; } /* Vue.js */
+.about-text li:nth-child(5) { background-color: #ff6c37; } /* Postman */
+
+/* Ensure text is readable on colored backgrounds */
+.about-text li:nth-child(1) span,
+.about-text li:nth-child(2) span { color: #000000; }
+
+.about-text li:nth-child(3) span,
+.about-text li:nth-child(4) span,
+.about-text li:nth-child(5) span { color: #ffffff; }
+
+/* Portfolio section */
+#portfolio {
+  padding: 4rem 2rem;
+  background-color: var(--portfolio-bg);
+  min-height: 500px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  background-color: transparent;
+}
+
+.portfolio-item {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--card-shadow);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.portfolio-item h3 {
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-item p {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+/* Add a subtle gradient overlay to portfolio items */
+.portfolio-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(41, 128, 185, 0.1) 100%);
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover::before {
+  opacity: 1;
+}
+
+/* Add some variety to portfolio items */
+.portfolio-item:nth-child(odd) {
+  background-color: #e8f4fd;
+}
+
+.portfolio-item:nth-child(3n) .button {
+  background-color: #e74c3c;
+}
+
+.portfolio-item:nth-child(3n) .button:hover {
+  background-color: #c0392b;
+}
+
+/* Contact section */
+#contact {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+  color: #ffffff;
+  scroll-margin-top: 70px; /* Adjust this value based on your navbar height */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form button {
+  background-color: #ffffff;
+  color: #2193b0;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.contact-form button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-links a {
+  font-size: 1.8rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #f0f0f0;
+  transform: translateY(-3px);
+}
+
+/* Pulse animation for social icons */
+.social-links a {
+  position: relative;
+}
+
+.social-links a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0.5;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover::before {
+  transform: scale(1.5);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animations for sections */
+#about, #portfolio, #contact {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Ensure the sections have some minimum height */
+#about, #portfolio, #contact {
+  min-height: 100vh;
+}
+
+/* Animated underline for section headings */
+#about h2, #portfolio h2, #contact h2 {
+  position: relative;
+  display: inline-block;
+}
+
+#about h2::after, #portfolio h2::after, #contact h2::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+#about h2:hover::after, #portfolio h2:hover::after, #contact h2:hover::after {
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 6rem 1rem 4rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .about-text h2, #portfolio h2, #contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .skills-list li {
+    font-size: 0.8rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* Ensure the sections have some minimum height */
+#about, #portfolio, #contact {
+  min-height: 100vh;
+}
+
+/* Hover effects for portfolio items */
+.portfolio-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-toggle:hover .bar {
+    background-color: var(--accent-color);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+
+  .navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/* Add this to your existing CSS */
+
+/* Change cursor to pointer for all buttons and links */
+a, button, .cta-button, .nav-link, .portfolio-item, .social-links a {
+  cursor: pointer;
+}
+
+/* Specifically for the navbar toggle on mobile */
+.navbar-toggle {
+  cursor: pointer;
+}
+
+/* For portfolio items, change cursor only on hover */
+.portfolio-item {
+  cursor: default; /* Default cursor */
+  transition: cursor 0.3s ease; /* Smooth transition for cursor change */
+}
+
+.portfolio-item:hover {
+  cursor: pointer;
+}
+
+/* If you have any custom buttons or clickable elements, add them here */
+.custom-button, .clickable-element {
+  cursor: pointer;
+}
